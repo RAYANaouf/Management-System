@@ -1,0 +1,240 @@
+{
+ "actions": [],
+ "allow_auto_repeat": 1,
+ "allow_events_in_timeline": 1,
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "format:{first_name} {last_name}",
+ "creation": "2026-02-17 18:42:08.921847",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "tab1",
+  "first_name",
+  "customer_debt",
+  "cb1",
+  "last_name",
+  "db1",
+  "legal_type",
+  "column_break_eyf6",
+  "category",
+  "tab_legal_tax_information",
+  "sb2",
+  "nif",
+  "rc",
+  "cb2",
+  "nis",
+  "ai",
+  "sb3",
+  "rib",
+  "ccp",
+  "cb4",
+  "bank_name",
+  "key",
+  "contact_responsible_person",
+  "responsible",
+  "email",
+  "cb5",
+  "phone_number",
+  "image",
+  "debt_tab",
+  "debt"
+ ],
+ "fields": [
+  {
+   "fieldname": "tab1",
+   "fieldtype": "Tab Break",
+   "label": "Generals"
+  },
+  {
+   "fieldname": "tab_legal_tax_information",
+   "fieldtype": "Tab Break",
+   "label": "Legal & Tax & Banking Information"
+  },
+  {
+   "fieldname": "nif",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "NIF"
+  },
+  {
+   "fieldname": "nis",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "NIS"
+  },
+  {
+   "fieldname": "rc",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "RC (Trade Register TR)"
+  },
+  {
+   "fieldname": "rib",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "RIB"
+  },
+  {
+   "fieldname": "bank_name",
+   "fieldtype": "Data",
+   "label": "Bank Name"
+  },
+  {
+   "fieldname": "contact_responsible_person",
+   "fieldtype": "Tab Break",
+   "label": "Contact & responsible"
+  },
+  {
+   "fieldname": "responsible",
+   "fieldtype": "Data",
+   "label": "Responsible"
+  },
+  {
+   "fieldname": "phone_number",
+   "fieldtype": "Phone",
+   "label": "Phone Number"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email"
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Attach Image",
+   "hidden": 1,
+   "label": "Image"
+  },
+  {
+   "fieldname": "first_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "First Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "last_name",
+   "fieldtype": "Data",
+   "label": "Last Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "ai",
+   "fieldtype": "Data",
+   "label": "AI (Tax Article)"
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "cb2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "sb3",
+   "fieldtype": "Section Break",
+   "label": "Bancking"
+  },
+  {
+   "fieldname": "cb4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "cb5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "ccp",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "CCP"
+  },
+  {
+   "fieldname": "key",
+   "fieldtype": "Data",
+   "label": "Key"
+  },
+  {
+   "fieldname": "db1",
+   "fieldtype": "Section Break"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "sb2",
+   "fieldtype": "Section Break",
+   "label": "Legal & Tax"
+  },
+  {
+   "default": "\ud83c\udfe2 Company",
+   "fieldname": "legal_type",
+   "fieldtype": "Select",
+   "label": "Legal type",
+   "options": "\ud83c\udfe2 Company\n\ud83c\udfec Establishment",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_eyf6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "\ud83d\udc53 Optician",
+   "fieldname": "category",
+   "fieldtype": "Select",
+   "label": "Category",
+   "options": "\ud83d\udc53 Optician\n\ud83d\udc41\ufe0f Optometrist\n\ud83c\udfe5 Clinic\n\ud83c\udfe8 Hospital\n\ud83d\udecd\ufe0f Reseller",
+   "reqd": 1
+  },
+  {
+   "fieldname": "debt_tab",
+   "fieldtype": "Tab Break",
+   "label": "Debt"
+  },
+  {
+   "default": "0",
+   "fieldname": "debt",
+   "fieldtype": "Data",
+   "label": "Debt",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "customer_debt",
+   "fieldtype": "Currency",
+   "label": "Customer Debt",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "image_field": "image",
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-02-19 00:17:29.037184",
+ "modified_by": "Administrator",
+ "module": "Management System",
+ "name": "Customer",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
