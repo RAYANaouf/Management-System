@@ -15,15 +15,30 @@
   "sb_currency_and_pricing",
   "price_list",
   "warehouses_section",
-  "target_warehouse",
+  "update_stock",
+  "source_warehouse",
   "items_section",
   "items",
   "section_break_brxx",
   "total_qty",
   "column_break_nuy1",
   "column_break_ej7q",
-  "table_total_amount",
-  "amended_from"
+  "total",
+  "net_total",
+  "section_tax_and_discount",
+  "tax",
+  "discount",
+  "section_totals",
+  "grand_total",
+  "section_payment",
+  "is_paid",
+  "column_break_fjyi",
+  "paiment_method",
+  "paiment_amount",
+  "amended_from",
+  "section_break_jled",
+  "space",
+  "space2"
  ],
  "fields": [
   {
@@ -88,6 +103,7 @@
    "reqd": 1
   },
   {
+   "default": "1",
    "fieldname": "total_qty",
    "fieldtype": "Float",
    "label": "Total Quantity",
@@ -98,12 +114,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "table_total_amount",
-   "fieldtype": "Currency",
-   "label": "Total",
-   "read_only": 1
-  },
-  {
    "fieldname": "section_break_brxx",
    "fieldtype": "Section Break",
    "hide_border": 1
@@ -111,6 +121,66 @@
   {
    "fieldname": "column_break_ej7q",
    "fieldtype": "Column Break"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "warehouses_section",
+   "fieldtype": "Section Break",
+   "label": "Warehouses"
+  },
+  {
+   "depends_on": "update_stock",
+   "fieldname": "source_warehouse",
+   "fieldtype": "Link",
+   "label": "Default Source Warehouse",
+   "options": "Warehouse"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_paid",
+   "fieldtype": "Check",
+   "label": "Is Paid"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_payment",
+   "fieldtype": "Section Break",
+   "label": "Paiment"
+  },
+  {
+   "depends_on": "is_paid",
+   "fieldname": "paiment_method",
+   "fieldtype": "Data",
+   "label": "Paiment Method"
+  },
+  {
+   "fieldname": "column_break_fjyi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "is_paid",
+   "fieldname": "paiment_amount",
+   "fieldtype": "Currency",
+   "label": "Paiment Amount"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_totals",
+   "fieldtype": "Section Break",
+   "label": "Totals"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_tax_and_discount",
+   "fieldtype": "Section Break",
+   "label": "Tax & Discount"
+  },
+  {
+   "default": "0",
+   "fieldname": "grand_total",
+   "fieldtype": "Data",
+   "label": "Grand Total",
+   "read_only": 1
   },
   {
    "fieldname": "amended_from",
@@ -123,23 +193,57 @@
    "search_index": 1
   },
   {
-   "collapsible": 1,
-   "fieldname": "warehouses_section",
-   "fieldtype": "Section Break",
-   "label": "Warehouses"
+   "fieldname": "tax",
+   "fieldtype": "Table",
+   "label": "Tax",
+   "options": "Sales Invoice Tax"
   },
   {
-   "fieldname": "target_warehouse",
-   "fieldtype": "Link",
-   "label": "Default Target Warehouse",
-   "options": "Warehouse"
+   "fieldname": "discount",
+   "fieldtype": "Table",
+   "label": "Discount",
+   "options": "Sales Invoice Discount"
+  },
+  {
+   "default": "0",
+   "fieldname": "total",
+   "fieldtype": "Currency",
+   "label": "Total",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "net_total",
+   "fieldtype": "Currency",
+   "label": "Net Total",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "update_stock",
+   "fieldtype": "Check",
+   "label": "Update Stock"
+  },
+  {
+   "fieldname": "section_break_jled",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "space",
+   "fieldtype": "HTML",
+   "options": "<h1></h1>"
+  },
+  {
+   "fieldname": "space2",
+   "fieldtype": "HTML",
+   "options": "<h1 style=\"\"></h1>"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-02-18 02:52:49.953739",
+ "modified": "2026-02-22 00:57:09.141276",
  "modified_by": "Administrator",
  "module": "Management System",
  "name": "Sales Invoice",
